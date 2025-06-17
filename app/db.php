@@ -1,8 +1,13 @@
 <?php
 /**
- * Database Connection Configuration
+ * PHP Error Reporting and Database Connection Configuration
  * Handles MySQL database connection for the blog application
  */
+
+// Enable full error reporting for debugging
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 // Database configuration
 $host = 'localhost';
