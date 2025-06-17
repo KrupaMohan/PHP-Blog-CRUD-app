@@ -73,15 +73,23 @@ $password = '';             // Your MySQL password
 
 #### Option A: Using PHP Built-in Server
 ```bash
-cd /path/to/your/project
+cd /path/to/your/project/public
 php -S localhost:8000
 ```
 Then visit: `http://localhost:8000`
 
 #### Option B: Using Apache/Nginx
-1. Place the project files in your web server's document root
-2. Configure your web server to serve PHP files
-3. Access via your web server URL
+1. Point your web server's document root to the `public/` directory of this project.
+   For Apache, in your VirtualHost or httpd.conf:
+   ```apache
+   DocumentRoot "/path/to/your/project/public"
+   <Directory "/path/to/your/project/public">
+       AllowOverride All
+       Require all granted
+   </Directory>
+   ```
+2. Configure your web server to serve PHP files.
+3. Access via your web server URL.
 
 ## Usage
 
